@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head>
+    <title>Hello Page</title>
+</head>
+<body>
+<h1 th:inline="text">Hello, <span sec:authentication="name">User</span>!</h1>
+
+<!-- Chỉ hiển thị link Admin nếu user có role ADMIN -->
+<div sec:authorize="hasRole('ADMIN')">
+    <p><a th:href="@{/admin}">Admin Page</a></p>
+</div>
+
+<!-- Chỉ hiển thị link User nếu user có role USER -->
+<div sec:authorize="hasRole('USER')">
+    <p><a th:href="@{/user}">User Page</a></p>
+</div>
+
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Sign Out"/>
+</form>
+</body>
+</html>
