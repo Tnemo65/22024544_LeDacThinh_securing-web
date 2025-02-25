@@ -1,4 +1,8 @@
 # 22024544_LeDacThinh_securing-web
+# Run
+1. cd complete
+2. mvn install
+3. mvn spring-boot:run
 
 # Admin
 ![image](https://github.com/user-attachments/assets/1e5c7b84-a593-4080-9ce2-f120d334df81)
